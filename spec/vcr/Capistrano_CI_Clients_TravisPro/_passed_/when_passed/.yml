@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.travis-ci.com/repos/rails/rails-private
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Travis/1.5.5 (Darwin; Ruby 1.9.3-p385; RubyGems 2.0.3) Faraday/0.8.8 Typhoeus/0.6.5
+      Accept:
+      - application/json; version=2
+      Authorization:
+      - token secret_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Expose-Headers:
+      - Content-Type, Cache-Control, Expires, Etag, Last-Modified
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 05 Oct 2013 12:19:40 GMT
+      Etag:
+      - ! '"eb2a1678701a75e0af71a6180593d08c"'
+      Server:
+      - nginx/1.5.2
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept,Authorization,Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - private
+      X-Endpoint:
+      - Travis::Pro::Api::Endpoint::Repos
+      X-Oauth-Scopes:
+      - public,private
+      X-Pattern:
+      - /:owner_name/:name
+      Content-Length:
+      - '324'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"repo":{"id":95390,"slug":"rails/rails-private","description":"","last_build_id":1345750,"last_build_number":"395","last_build_state":"passed","last_build_duration":730,"last_build_language":null,"last_build_started_at":"2013-10-04T21:02:25Z","last_build_finished_at":"2013-10-04T21:14:35Z","github_language":"Ruby"}}'
+    http_version:
+  recorded_at: Sat, 05 Oct 2013 12:19:43 GMT
+- request:
+    method: get
+    uri: https://api.travis-ci.com/repos/95390/branches/master
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Travis/1.5.5 (Darwin; Ruby 1.9.3-p385; RubyGems 2.0.3) Faraday/0.8.8 Typhoeus/0.6.5
+      Accept:
+      - application/json; version=2
+      Authorization:
+      - token secret_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Expose-Headers:
+      - Content-Type, Cache-Control, Expires, Etag, Last-Modified
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 05 Oct 2013 12:19:40 GMT
+      Etag:
+      - ! '"f7bacd3d829698a4cf1ab3a8d122d9fc"'
+      Server:
+      - nginx/1.5.2
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept,Authorization,Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - private
+      X-Endpoint:
+      - Travis::Pro::Api::Endpoint::Repos
+      X-Oauth-Scopes:
+      - public,private
+      X-Pattern:
+      - /:repository_id/branches/:branch
+      Content-Length:
+      - '957'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"branch":{"id":1335197,"repository_id":95390,"commit_id":1556607,"number":"384","config":{"language":"ruby","rvm":["2.0.0"],"before_script":["cp
+        config/database.travis.yml config/database.yml","RAILS_ENV=test bundle exec
+        rake db:create db:migrate db:schema:load"],"script":"bundle exec rspec --format
+        progress spec","notifications":{"email":["team@labs.sendgrid.com"]},".result":"configured"},"state":"passed","started_at":"2013-10-03T17:19:02Z","finished_at":"2013-10-03T17:36:32Z","duration":1050,"job_ids":[1818653],"pull_request":false},"commit":{"id":1556607,"sha":"dad3d22ad1eef21ec7fdc8973bab0213a267635f","branch":"master","message":"[#58174688]
+        change tests","committed_at":"2013-10-03T16:24:44Z","author_name":"Alexey
+        Vasiliev","author_email":"leopard.not.a@gmail.com","committer_name":"Alexey
+        Vasiliev","committer_email":"leopard.not.a@gmail.com","compare_url":"https://github.com/rails/rails-private/compare/8b5265626bb3...dad3d22ad1ee"}}'
+    http_version:
+  recorded_at: Sat, 05 Oct 2013 12:19:43 GMT
+recorded_with: VCR 2.6.0
