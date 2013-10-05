@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.travis-ci.org/repos/railsware/zero_deploy
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Travis/1.5.5 (Darwin; Ruby 1.9.3-p385; RubyGems 2.0.3) Faraday/0.8.8 Typhoeus/0.6.5
+      Accept:
+      - application/json; version=2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Expose-Headers:
+      - Content-Type, Cache-Control, Expires, Etag, Last-Modified
+      Age:
+      - '0'
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 05 Oct 2013 11:12:15 GMT
+      Etag:
+      - ! '"a37fd9d5440d553ef6ecf7636fb8d294"'
+      Server:
+      - nginx/1.5.2
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept,Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - public
+      X-Content-Digest:
+      - 1683464301ae074e6fed5351396dda29178dc27f
+      X-Endpoint:
+      - Travis::Api::App::Endpoint::Repos
+      X-Oauth-Scopes:
+      - public
+      X-Pattern:
+      - /:owner_name/:name
+      X-Rack-Cache:
+      - miss, store
+      Content-Length:
+      - '318'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"repo":{"id":544757,"slug":"railsware/zero_deploy","description":"","last_build_id":5983202,"last_build_number":"2","last_build_state":"failed","last_build_duration":31,"last_build_language":null,"last_build_started_at":"2013-04-02T11:13:13Z","last_build_finished_at":"2013-04-02T11:13:30Z","github_language":"Ruby"}}'
+    http_version: 
+  recorded_at: Sat, 05 Oct 2013 11:12:18 GMT
+- request:
+    method: get
+    uri: https://api.travis-ci.org/repos/544757/branches/master
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Travis/1.5.5 (Darwin; Ruby 1.9.3-p385; RubyGems 2.0.3) Faraday/0.8.8 Typhoeus/0.6.5
+      Accept:
+      - application/json; version=2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Expose-Headers:
+      - Content-Type, Cache-Control, Expires, Etag, Last-Modified
+      Age:
+      - '0'
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 05 Oct 2013 11:12:16 GMT
+      Etag:
+      - ! '"0d8f905a539180d5788dd4e49a79eca5"'
+      Server:
+      - nginx/1.5.2
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept,Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - public
+      X-Content-Digest:
+      - 9899e89a9ea15351cbc404d88f816de9910373b0
+      X-Endpoint:
+      - Travis::Api::App::Endpoint::Repos
+      X-Oauth-Scopes:
+      - public
+      X-Pattern:
+      - /:repository_id/branches/:branch
+      X-Rack-Cache:
+      - miss, store
+      Content-Length:
+      - '700'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"branch":{"id":5983202,"repository_id":544757,"commit_id":1766529,"number":"2","config":{"language":"ruby","rvm":["1.9.3","2.0.0"],".result":"configured"},"state":"failed","started_at":"2013-04-02T11:13:13Z","finished_at":"2013-04-02T11:13:30Z","duration":31,"job_ids":[5983203,5983204],"pull_request":false},"commit":{"id":1766529,"sha":"ef87117a529b2e20a34d9ddbdee82c6baf906abd","branch":"master","message":"CI
+        status added","committed_at":"2013-04-02T11:10:49Z","author_name":"gregolsen","author_email":"anotheroneman@yahoo.com","committer_name":"gregolsen","committer_email":"anotheroneman@yahoo.com","compare_url":"https://github.com/railsware/zero_deploy/compare/0a2aaa3d7050...ef87117a529b"}}'
+    http_version: 
+  recorded_at: Sat, 05 Oct 2013 11:12:19 GMT
+recorded_with: VCR 2.6.0

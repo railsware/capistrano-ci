@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.travis-ci.org/repos/rails/rails
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Travis/1.5.5 (Darwin; Ruby 1.9.3-p385; RubyGems 2.0.3) Faraday/0.8.8 Typhoeus/0.6.5
+      Accept:
+      - application/json; version=2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Expose-Headers:
+      - Content-Type, Cache-Control, Expires, Etag, Last-Modified
+      Age:
+      - '0'
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 05 Oct 2013 11:06:21 GMT
+      Etag:
+      - ! '"77b04f76a68d42f00d928e2f6551989a"'
+      Server:
+      - nginx/1.5.2
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept,Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - public
+      X-Content-Digest:
+      - 6632e70864aebeb877817d78d23864e103218768
+      X-Endpoint:
+      - Travis::Api::App::Endpoint::Repos
+      X-Oauth-Scopes:
+      - public
+      X-Pattern:
+      - /:owner_name/:name
+      X-Rack-Cache:
+      - miss, store
+      Content-Length:
+      - '326'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"repo":{"id":891,"slug":"rails/rails","description":"Ruby on Rails","last_build_id":12156313,"last_build_number":"10783","last_build_state":"passed","last_build_duration":17135,"last_build_language":null,"last_build_started_at":"2013-10-05T01:09:05Z","last_build_finished_at":"2013-10-05T01:47:05Z","github_language":"Ruby"}}'
+    http_version: 
+  recorded_at: Sat, 05 Oct 2013 11:06:24 GMT
+- request:
+    method: get
+    uri: https://api.travis-ci.org/repos/891/branches/master
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Travis/1.5.5 (Darwin; Ruby 1.9.3-p385; RubyGems 2.0.3) Faraday/0.8.8 Typhoeus/0.6.5
+      Accept:
+      - application/json; version=2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Expose-Headers:
+      - Content-Type, Cache-Control, Expires, Etag, Last-Modified
+      Age:
+      - '0'
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 05 Oct 2013 11:06:22 GMT
+      Etag:
+      - ! '"a60a09e1a26bd47dfb70ed17ffcba5ca"'
+      Server:
+      - nginx/1.5.2
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept,Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - public
+      X-Content-Digest:
+      - 158d53eef88cddddd1a395c9cce7fdabecfca21f
+      X-Endpoint:
+      - Travis::Api::App::Endpoint::Repos
+      X-Oauth-Scopes:
+      - public
+      X-Pattern:
+      - /:repository_id/branches/:branch
+      X-Rack-Cache:
+      - miss, store
+      Content-Length:
+      - '1692'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"branch":{"id":12156291,"repository_id":891,"commit_id":3565690,"number":"10783","config":{"script":"ci/travis.rb","before_install":["travis_retry
+        gem install bundler"],"rvm":["1.9.3","2.0.0","jruby-head","rbx-19mode"],"env":["GEM=railties","GEM=ap,am,amo,as,av","GEM=ar:mysql","GEM=ar:mysql2","GEM=ar:sqlite3","GEM=ar:postgresql"],"matrix":{"allow_failures":[{"rvm":"jruby-head"},{"rvm":"rbx-19mode"}]},"notifications":{"email":false,"irc":{"on_success":"change","on_failure":"always","channels":["irc.freenode.org#rails-contrib"]},"campfire":{"on_success":"change","on_failure":"always","rooms":[{"secure":"YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="}]}},"bundler_args":"--path
+        vendor/bundle --without test",".result":"configured"},"state":"passed","started_at":"2013-10-05T00:54:59Z","finished_at":"2013-10-05T01:45:17Z","duration":20516,"job_ids":[12156292,12156293,12156294,12156295,12156296,12156297,12156298,12156299,12156300,12156301,12156302,12156303,12156304,12156305,12156306,12156307,12156308,12156309,12156310,12156311,12156312,12156314,12156316,12156318],"pull_request":false},"commit":{"id":3565690,"sha":"21a71cd5d8f266252278a63316a99cc403a32cad","branch":"master","message":"instrumenter
+        can''t be cached because the app could be called from\ndifferent threads.","committed_at":"2013-10-05T00:52:26Z","author_name":"Aaron
+        Patterson","author_email":"aaron.patterson@gmail.com","committer_name":"Aaron
+        Patterson","committer_email":"aaron.patterson@gmail.com","compare_url":"https://github.com/rails/rails/compare/2ae9166d8fef...21a71cd5d8f2"}}'
+    http_version: 
+  recorded_at: Sat, 05 Oct 2013 11:06:25 GMT
+recorded_with: VCR 2.6.0
