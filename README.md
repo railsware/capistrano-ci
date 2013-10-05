@@ -1,4 +1,5 @@
 # Capistrano::Ci
+[![Build Status](https://travis-ci.org/railsware/capistrano-ci.png)](https://travis-ci.org/railsware/capistrano-ci)
 
 TODO: Write a gem description
 
