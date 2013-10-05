@@ -1,7 +1,7 @@
 module Capistrano
   module CI
     class Client
-      SETTINGS = [:ci_client, :ci_repository, :ci_token]
+      SETTINGS = [:ci_client, :ci_repository, :ci_access_token]
 
       class NotFound < StandardError; end
 
@@ -26,6 +26,8 @@ module Capistrano
         @client ||= case @config[:ci_client]
         when "travis"
           Capistrano::CI::Clients::Travis.new @config[:ci_repository]
+        when "travis_pro"
+          Capistrano::CI::Clients::TravisPro.new @config[:ci_repository], @config[:ci_access_token]
         else
           raise NotFound, "can't find CI client with name '#{@config[:ci_client]}'"
         end

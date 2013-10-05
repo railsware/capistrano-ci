@@ -9,6 +9,7 @@ describe Capistrano::CI::Client do
     config = CIConfig.new
     config[:ci_client] = ci_client
     config[:ci_repository] = "rails/rails"
+    config[:ci_access_token] = "token"
     config
   end
 
@@ -22,8 +23,19 @@ describe Capistrano::CI::Client do
       let(:ci_client){ "travis" }
       let(:travis_client){ double(state: "passed") }
 
-      before do
-        client.stub(:client).and_return(travis_client)
+     before do
+        Capistrano::CI::Clients::Travis.should_receive(:new).with("rails/rails").and_return(travis_client)
+      end
+
+      it{ should == "passed" }
+    end
+
+    context "when travis pro" do
+      let(:ci_client){ "travis_pro" }
+      let(:travis_client){ double(state: "passed") }
+
+     before do
+        Capistrano::CI::Clients::TravisPro.should_receive(:new).with("rails/rails","token").and_return(travis_client)
       end
 
       it{ should == "passed" }
@@ -50,6 +62,16 @@ describe Capistrano::CI::Client do
       it{ should be_true }
     end
 
+    context "when travis pro" do
+      let(:ci_client){ "travis_pro" }
+      let(:travis_client){ double(state: "passed") }
+
+      before do
+        Capistrano::CI::Clients::Travis.should_receive(:new).with("rails/rails","token").and_return(travis_client)
+      end
+
+      it{ should be_true }
+    end
     context "when unsupported" do
       let(:ci_client){ "unsupported" }
 
