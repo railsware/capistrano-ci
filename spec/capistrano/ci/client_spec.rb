@@ -5,8 +5,16 @@ class CIConfig < Hash
 end
 
 describe Capistrano::CI::Client do
+  let(:config) do
+    config = CIConfig.new
+    config[:ci_client] = ci_client
+    config[:ci_repository] = "rails/rails"
+    config
+  end
+
+  let(:client){ described_class.new(config) }
+
   describe "#state" do
-    let(:client){ described_class.new(CIConfig.new(ci_client: ci_client)) }
 
     subject{ client.state("master") }
 
@@ -29,8 +37,6 @@ describe Capistrano::CI::Client do
   end
 
   describe "#passed?" do
-    let(:client){ described_class.new(CIConfig.new(ci_client: ci_client)) }
-
     subject{ client.passed?("master") }
 
     context "when travis" do
@@ -38,7 +44,7 @@ describe Capistrano::CI::Client do
       let(:travis_client){ double(state: "passed") }
 
       before do
-        client.stub(:client).and_return(travis_client)
+        Capistrano::CI::Clients::Travis.should_receive(:new).with("rails/rails").and_return(travis_client)
       end
 
       it{ should be_true }
