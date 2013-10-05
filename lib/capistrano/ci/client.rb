@@ -23,7 +23,7 @@ module Capistrano
       private
 
       def client
-        case @config[:ci_client]
+        @client ||= case @config[:ci_client]
         when "travis"
           Capistrano::CI::Clients::Travis.new @config[:ci_repository]
         else
