@@ -2,14 +2,13 @@ require 'travis'
 
 module Capistrano
   module CI
-    module Client
-      class Travis
+    module Clients
+      class Travis < Base
         attr_reader :repository_name
 
         def initialize(repository_name)
           @repository_name = repository_name
         end
-
 
         def passed?(branch)
           state(branch) == "passed"

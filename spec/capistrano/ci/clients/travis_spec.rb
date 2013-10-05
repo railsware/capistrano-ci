@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Capistrano::CI::Client::Travis, :vcr do
+describe Capistrano::CI::Clients::Travis, :vcr do
   describe "#passed?" do
     subject{ client.passed?("master") }
 

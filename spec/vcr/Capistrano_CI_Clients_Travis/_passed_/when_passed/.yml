@@ -29,9 +29,9 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 05 Oct 2013 11:12:15 GMT
+      - Sat, 05 Oct 2013 11:56:16 GMT
       Etag:
-      - ! '"77b04f76a68d42f00d928e2f6551989a"'
+      - ! '"2d715248324439cca17e6d206e1be99c"'
       Server:
       - nginx/1.5.2
       Status:
@@ -43,7 +43,7 @@ http_interactions:
       X-Accepted-Oauth-Scopes:
       - public
       X-Content-Digest:
-      - 6632e70864aebeb877817d78d23864e103218768
+      - d278cc6f6e65aab27c6d6b3b8f4c5fd268079679
       X-Endpoint:
       - Travis::Api::App::Endpoint::Repos
       X-Oauth-Scopes:
@@ -53,14 +53,14 @@ http_interactions:
       X-Rack-Cache:
       - miss, store
       Content-Length:
-      - '326'
+      - '308'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! '{"repo":{"id":891,"slug":"rails/rails","description":"Ruby on Rails","last_build_id":12156313,"last_build_number":"10783","last_build_state":"passed","last_build_duration":17135,"last_build_language":null,"last_build_started_at":"2013-10-05T01:09:05Z","last_build_finished_at":"2013-10-05T01:47:05Z","github_language":"Ruby"}}'
+      string: ! '{"repo":{"id":891,"slug":"rails/rails","description":"Ruby on Rails","last_build_id":12165105,"last_build_number":"10784","last_build_state":"started","last_build_duration":null,"last_build_language":null,"last_build_started_at":"2013-10-05T11:24:41Z","last_build_finished_at":null,"github_language":"Ruby"}}'
     http_version: 
-  recorded_at: Sat, 05 Oct 2013 11:12:17 GMT
+  recorded_at: Sat, 05 Oct 2013 11:56:18 GMT
 - request:
     method: get
     uri: https://api.travis-ci.org/repos/891/branches/master
@@ -90,7 +90,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 05 Oct 2013 11:12:15 GMT
+      - Sat, 05 Oct 2013 11:56:16 GMT
       Etag:
       - ! '"a60a09e1a26bd47dfb70ed17ffcba5ca"'
       Server:
@@ -126,5 +126,5 @@ http_interactions:
         Patterson","author_email":"aaron.patterson@gmail.com","committer_name":"Aaron
         Patterson","committer_email":"aaron.patterson@gmail.com","compare_url":"https://github.com/rails/rails/compare/2ae9166d8fef...21a71cd5d8f2"}}'
     http_version: 
-  recorded_at: Sat, 05 Oct 2013 11:12:18 GMT
+  recorded_at: Sat, 05 Oct 2013 11:56:19 GMT
 recorded_with: VCR 2.6.0
