@@ -32,7 +32,7 @@ Variables list:
 
   * :ci_client (required) - supports 'travis' or 'travis_pro';
   * :ci_repository (required) - organization or user name and repository name on github;
-  * :ci_access_token(required only for travis_pro ci_client) - access token for Pro account on Travis-CI.
+  * :ci_access_token(required only for 'travis_pro' ci client) - access token for Pro account on Travis-CI.
 
 ### Open Source Projects
 
@@ -59,7 +59,7 @@ To have more information about Travis-CI access token follow [this blog post](ht
 
      # or in case of using capistrano-patch: 
      before 'patch:create' do
-       calendar_client.create_event
+       ci.verify
      end
 
 ## Contributing
