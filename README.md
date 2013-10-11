@@ -1,4 +1,3 @@
-
 # Capistrano::Ci
 [![Build Status](https://travis-ci.org/railsware/capistrano-ci.png)](https://travis-ci.org/railsware/capistrano-ci)
 
@@ -24,7 +23,8 @@ Or install it yourself as:
     $ gem install capistrano-ci
 
 Add to your Capfile:
-    $ require 'capistrano/ci/recipies'
+    
+    require 'capistrano/ci/recipies'
 
 ## Configuration
 
@@ -49,7 +49,7 @@ Additional to ci_client and ci_repository setup ci_access_token:
      set(:ci_repository){ "organisation-or-user/repository-name" }
      set(:ci_access_token){ "your-pro-access-token" }
 
-To have more information about Travis-CI access token follow [this blog post](http://about.travis-ci.org/blog/2013-01-28-token-token-token)
+Read explaination [how to obtain Travis-CI access token](http://railsware.com/blog/2013/09/10/capistrano-recipe-for-checking-travis-ci-build-status/). To have more information about Travis-CI access token follow [this blog post](http://about.travis-ci.org/blog/2013-01-28-token-token-token). 
 
 ### Enable ci:verify task:
 
