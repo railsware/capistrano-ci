@@ -7,13 +7,13 @@ describe Capistrano::CI::Clients::Travis, :vcr do
     context "when passed" do
       let(:client){ described_class.new("rails/rails") }
 
-      it{ should be_true }
+      it{ should == true }
     end
 
     context "when failed" do
       let(:client){ described_class.new("railsware/zero_deploy") }
 
-      it{ should be_false }
+      it{ should == false }
     end
   end
 
@@ -37,7 +37,7 @@ describe Capistrano::CI::Clients::Travis, :vcr do
     context "when repository was not found" do
       let(:client){ described_class.new("rails/some_strange_repo") }
 
-      it{ -> { subject }.should raise_error(Travis::Client::NotFound) }
+      it{ expect{ subject }.to raise_error(Travis::Client::NotFound) }
     end
   end
 end

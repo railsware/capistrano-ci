@@ -9,13 +9,13 @@ describe Capistrano::CI::Clients::TravisPro, :vcr do
     context "when passed" do
       let(:branch_name){ "master" }
 
-      it{ should be_true }
+      it{ should == true }
     end
 
     context "when failed" do
       let(:branch_name){ "events-framework" }
 
-      it{ should be_false }
+      it{ should == false }
     end
   end
 
@@ -40,7 +40,7 @@ describe Capistrano::CI::Clients::TravisPro, :vcr do
 
       let(:branch_name){ "master" }
 
-      it{ -> { subject }.should raise_error(Travis::Client::NotFound) }
+      it{ expect{ subject }.to raise_error(Travis::Client::NotFound) }
     end
   end
 end

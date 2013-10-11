@@ -44,7 +44,7 @@ describe Capistrano::CI::Client do
     context "when unsupported" do
       let(:ci_client){ "unsupported" }
 
-      it{ ->{ subject }.should raise_error(Capistrano::CI::Client::NotFound) }
+      it{ expect{ subject }.to raise_error(Capistrano::CI::Client::NotFound) }
     end
   end
 
@@ -53,29 +53,29 @@ describe Capistrano::CI::Client do
 
     context "when travis" do
       let(:ci_client){ "travis" }
-      let(:travis_client){ double(state: "passed") }
+      let(:travis_client){ double(passed?: true) }
 
       before do
         Capistrano::CI::Clients::Travis.should_receive(:new).with("rails/rails").and_return(travis_client)
       end
 
-      it{ should be_true }
+      it{ should == true }
     end
 
     context "when travis pro" do
       let(:ci_client){ "travis_pro" }
-      let(:travis_client){ double(state: "passed") }
+      let(:travis_client){ double(passed?: true) }
 
       before do
         Capistrano::CI::Clients::Travis.should_receive(:new).with("rails/rails","token").and_return(travis_client)
       end
 
-      it{ should be_true }
+      it{ should == true }
     end
     context "when unsupported" do
       let(:ci_client){ "unsupported" }
 
-      it{ ->{ subject }.should raise_error(Capistrano::CI::Client::NotFound) }
+      it{ expect{ subject }.to raise_error(Capistrano::CI::Client::NotFound) }
     end
   end
 end

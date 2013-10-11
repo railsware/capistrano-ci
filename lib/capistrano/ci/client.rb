@@ -17,7 +17,7 @@ module Capistrano
       end
 
       def passed?(branch)
-        client.state(branch)
+        client.passed?(branch)
       end
 
       private
