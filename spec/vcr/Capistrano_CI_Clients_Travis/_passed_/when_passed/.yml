@@ -7,8 +7,6 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Travis/1.5.5 (Darwin; Ruby 1.9.3-p385; RubyGems 2.0.3) Faraday/0.8.8 Typhoeus/0.6.5
       Accept:
       - application/json; version=2
   response:
@@ -29,9 +27,9 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 05 Oct 2013 11:56:16 GMT
+      - Sat, 19 Oct 2013 08:57:25 GMT
       Etag:
-      - ! '"2d715248324439cca17e6d206e1be99c"'
+      - ! '"7e14dca3cc77b42dd6088a8fa2ae950b"'
       Server:
       - nginx/1.5.2
       Status:
@@ -43,7 +41,7 @@ http_interactions:
       X-Accepted-Oauth-Scopes:
       - public
       X-Content-Digest:
-      - d278cc6f6e65aab27c6d6b3b8f4c5fd268079679
+      - 3c97c9e10513f412d2e9d4380ae1f67e9b0c2aac
       X-Endpoint:
       - Travis::Api::App::Endpoint::Repos
       X-Oauth-Scopes:
@@ -58,9 +56,9 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! '{"repo":{"id":891,"slug":"rails/rails","description":"Ruby on Rails","last_build_id":12165105,"last_build_number":"10784","last_build_state":"started","last_build_duration":null,"last_build_language":null,"last_build_started_at":"2013-10-05T11:24:41Z","last_build_finished_at":null,"github_language":"Ruby"}}'
-    http_version: 
-  recorded_at: Sat, 05 Oct 2013 11:56:18 GMT
+      string: ! '{"repo":{"id":891,"slug":"rails/rails","description":"Ruby on Rails","last_build_id":12751152,"last_build_number":"11026","last_build_state":"started","last_build_duration":null,"last_build_language":null,"last_build_started_at":"2013-10-19T08:50:23Z","last_build_finished_at":null,"github_language":"Ruby"}}'
+    http_version:
+  recorded_at: Sat, 19 Oct 2013 08:57:30 GMT
 - request:
     method: get
     uri: https://api.travis-ci.org/repos/891/branches/master
@@ -68,8 +66,6 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Travis/1.5.5 (Darwin; Ruby 1.9.3-p385; RubyGems 2.0.3) Faraday/0.8.8 Typhoeus/0.6.5
       Accept:
       - application/json; version=2
   response:
@@ -90,9 +86,9 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 05 Oct 2013 11:56:16 GMT
+      - Sat, 19 Oct 2013 08:57:27 GMT
       Etag:
-      - ! '"a60a09e1a26bd47dfb70ed17ffcba5ca"'
+      - ! '"7160009bce524a384403a2c66bec49b4"'
       Server:
       - nginx/1.5.2
       Status:
@@ -104,7 +100,7 @@ http_interactions:
       X-Accepted-Oauth-Scopes:
       - public
       X-Content-Digest:
-      - 158d53eef88cddddd1a395c9cce7fdabecfca21f
+      - ff1abe891a5a8148bfdfe458b057ecf04d364bd9
       X-Endpoint:
       - Travis::Api::App::Endpoint::Repos
       X-Oauth-Scopes:
@@ -114,17 +110,17 @@ http_interactions:
       X-Rack-Cache:
       - miss, store
       Content-Length:
-      - '1692'
+      - '1731'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! '{"branch":{"id":12156291,"repository_id":891,"commit_id":3565690,"number":"10783","config":{"script":"ci/travis.rb","before_install":["travis_retry
+      string: ! '{"branch":{"id":12719548,"repository_id":891,"commit_id":3729815,"number":"11020","config":{"script":"ci/travis.rb","before_install":["travis_retry
         gem install bundler"],"rvm":["1.9.3","2.0.0","jruby-head","rbx-19mode"],"env":["GEM=railties","GEM=ap,am,amo,as,av","GEM=ar:mysql","GEM=ar:mysql2","GEM=ar:sqlite3","GEM=ar:postgresql"],"matrix":{"allow_failures":[{"rvm":"jruby-head"},{"rvm":"rbx-19mode"}]},"notifications":{"email":false,"irc":{"on_success":"change","on_failure":"always","channels":["irc.freenode.org#rails-contrib"]},"campfire":{"on_success":"change","on_failure":"always","rooms":[{"secure":"YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="}]}},"bundler_args":"--path
-        vendor/bundle --without test",".result":"configured"},"state":"passed","started_at":"2013-10-05T00:54:59Z","finished_at":"2013-10-05T01:45:17Z","duration":20516,"job_ids":[12156292,12156293,12156294,12156295,12156296,12156297,12156298,12156299,12156300,12156301,12156302,12156303,12156304,12156305,12156306,12156307,12156308,12156309,12156310,12156311,12156312,12156314,12156316,12156318],"pull_request":false},"commit":{"id":3565690,"sha":"21a71cd5d8f266252278a63316a99cc403a32cad","branch":"master","message":"instrumenter
-        can''t be cached because the app could be called from\ndifferent threads.","committed_at":"2013-10-05T00:52:26Z","author_name":"Aaron
-        Patterson","author_email":"aaron.patterson@gmail.com","committer_name":"Aaron
-        Patterson","committer_email":"aaron.patterson@gmail.com","compare_url":"https://github.com/rails/rails/compare/2ae9166d8fef...21a71cd5d8f2"}}'
-    http_version: 
-  recorded_at: Sat, 05 Oct 2013 11:56:19 GMT
+        vendor/bundle --without test",".result":"configured"},"state":"passed","started_at":"2013-10-18T16:30:29Z","finished_at":"2013-10-18T16:51:44Z","duration":31114,"job_ids":[12719549,12719550,12719551,12719552,12719553,12719554,12719555,12719556,12719557,12719558,12719559,12719560,12719561,12719562,12719563,12719564,12719565,12719566,12719567,12719568,12719569,12719570,12719571,12719572],"pull_request":false},"commit":{"id":3729815,"sha":"7ec3f354958ef1709f1543b16fea5131b516f3cf","branch":"master","message":"Merge
+        pull request #11839 from chocoby/fix/convert_port_number\n\nConvert Fixnum
+        into String the port number like `db:structure:dump` task in MySQL.","committed_at":"2013-10-18T14:15:31Z","author_name":"Yves
+        Senn","author_email":"yves.senn@gmail.com","committer_name":"Yves Senn","committer_email":"yves.senn@gmail.com","compare_url":"https://github.com/rails/rails/compare/6c2810b8ed69...7ec3f354958e"}}'
+    http_version:
+  recorded_at: Sat, 19 Oct 2013 08:57:32 GMT
 recorded_with: VCR 2.6.0

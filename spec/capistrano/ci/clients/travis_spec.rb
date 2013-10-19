@@ -37,7 +37,7 @@ describe Capistrano::CI::Clients::Travis, :vcr do
     context "when repository was not found" do
       let(:client){ described_class.new("rails/some_strange_repo") }
 
-      it{ expect{ subject }.to raise_error(Travis::Client::NotFound) }
+      it{ expect{ subject }.to raise_error(Capistrano::CI::Clients::ResponseError) }
     end
   end
 end

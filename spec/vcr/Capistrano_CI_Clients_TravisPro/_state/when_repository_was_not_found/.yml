@@ -7,46 +7,36 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Travis/1.5.5 (Darwin; Ruby 1.9.3-p385; RubyGems 2.0.3) Faraday/0.8.8 Typhoeus/0.6.5
       Accept:
       - application/json; version=2
       Authorization:
-      - token WD4poUv9RKSpqRGwDrkzbQ
+      - token secret_token
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 403
+      message: Forbidden
     headers:
-      Cache-Control:
-      - no-cache
       Content-Type:
-      - application/json;charset=utf-8
+      - text/html;charset=utf-8
       Date:
-      - Sat, 05 Oct 2013 12:20:53 GMT
+      - Sat, 19 Oct 2013 09:13:49 GMT
       Server:
       - nginx/1.5.2
       Status:
-      - 404 Not Found
+      - 403 Forbidden
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
-      - Accept,Authorization,Accept-Encoding
-      X-Accepted-Oauth-Scopes:
-      - private
-      X-Endpoint:
-      - Travis::Pro::Api::Endpoint::Repos
+      - Accept-Encoding
       X-Oauth-Scopes:
-      - public,private
-      X-Pattern:
-      - /:owner_name/:name
+      - ''
       Content-Length:
-      - '20'
+      - '13'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! '{"file":"not found"}'
+      string: access denied
     http_version: 
-  recorded_at: Sat, 05 Oct 2013 12:20:56 GMT
+  recorded_at: Sat, 19 Oct 2013 09:13:54 GMT
 recorded_with: VCR 2.6.0

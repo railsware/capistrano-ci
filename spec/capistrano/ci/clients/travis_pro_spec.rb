@@ -12,7 +12,7 @@ describe Capistrano::CI::Clients::TravisPro, :vcr do
       it{ should == true }
     end
 
-    context "when failed" do
+    context "when not passed" do
       let(:branch_name){ "events-framework" }
 
       it{ should == false }
@@ -29,10 +29,10 @@ describe Capistrano::CI::Clients::TravisPro, :vcr do
       it{ should == "passed" }
     end
 
-    context "when failed" do
+    context "when not passed" do
       let(:branch_name){ "events-framework" }
 
-      it{ should == "failed" }
+      it{ should == "started" }
     end
 
     context "when repository was not found" do
@@ -40,7 +40,7 @@ describe Capistrano::CI::Clients::TravisPro, :vcr do
 
       let(:branch_name){ "master" }
 
-      it{ expect{ subject }.to raise_error(Travis::Client::NotFound) }
+      it{ expect{ subject }.to raise_error(Capistrano::CI::Clients::ResponseError) }
     end
   end
 end
