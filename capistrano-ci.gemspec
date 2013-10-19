@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["paladiy"]
   spec.email         = ["olexanderpaladiy@gmail.com"]
   spec.description   = %q{Capistrano recipe for checking CI build status}
-  spec.summary       = %q{Capistrano recipe for checking CI build status}
-  spec.homepage      = ""
+  spec.summary       = %q{Capistrano recipe for checking CI build status of your repo}
+  spec.homepage      = "https://github.com/railsware/capistrano-ci"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
