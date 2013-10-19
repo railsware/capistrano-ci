@@ -6,7 +6,8 @@
 
 capistrano-ci is extension for capistrano that allows you to check status of your repository before deployment. Currently it supports:
 
-  * travis-ci: Open Source and Pro versions ([https://travis-ci.org](https://travis-ci.org) or [https://travis-ci.com](https://travis-ci.com))
+  * Travis CI: Open Source and Pro versions ([https://travis-ci.org](https://travis-ci.org) or [https://travis-ci.com](https://travis-ci.com))
+  * CircleCi: [https://circleci.com](https://circleci.com) 
 
 ## Installation
 
@@ -30,7 +31,7 @@ Add to your Capfile:
 
 Variables list: 
 
-  * :ci_client (required) - supports 'travis' or 'travis_pro';
+  * :ci_client (required) - supports 'travis', 'travis_pro' or 'circle';
   * :ci_repository (required) - organization or user name and repository name on github;
   * :ci_access_token(required only for 'travis_pro' ci client) - access token for Pro account on Travis-CI.
 
@@ -50,6 +51,14 @@ Additional to ci_client and ci_repository setup ci_access_token:
      set(:ci_access_token){ "your-pro-access-token" }
 
 Read explaination [how to obtain Travis-CI access token](http://railsware.com/blog/2013/09/10/capistrano-recipe-for-checking-travis-ci-build-status/). To have more information about Travis-CI access token follow [this blog post](http://about.travis-ci.org/blog/2013-01-28-token-token-token). 
+
+### CircleCi: 
+
+Setup ci_client, ci_repository and ci_access_token in your deployment script:
+
+     set(:ci_client){ "circle" }
+     set(:ci_repository){ "organisation-or-user/repository-name" }
+     set(:ci_access_token){ "your-pro-access-token" }
 
 ### Enable ci:verify task:
 
