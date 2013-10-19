@@ -28,6 +28,8 @@ module Capistrano
           Capistrano::CI::Clients::Travis.new @config[:ci_repository]
         when "travis_pro"
           Capistrano::CI::Clients::TravisPro.new @config[:ci_repository], @config[:ci_access_token]
+        when "circle"
+          Capistrano::CI::Clients::Circle.new @config[:ci_repository], @config[:ci_access_token]
         else
           raise NotFound, "can't find CI client with name '#{@config[:ci_client]}'"
         end

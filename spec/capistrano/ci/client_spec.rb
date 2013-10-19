@@ -20,23 +20,32 @@ describe Capistrano::CI::Client do
     subject{ client.state("master") }
 
     context "when travis" do
+      let(:client_class){ Capistrano::CI::Clients::Travis }
       let(:ci_client){ "travis" }
       let(:travis_client){ double(state: "passed") }
 
-     before do
-        Capistrano::CI::Clients::Travis.should_receive(:new).with("rails/rails").and_return(travis_client)
-      end
+      before{ expect(client_class).to receive(:new).with("rails/rails").and_return(travis_client) }
+
+      it{ should == "passed" }
+    end
+
+    context "when circle" do
+      let(:client_class){ Capistrano::CI::Clients::Circle }
+      let(:ci_client){ "circle" }
+      let(:travis_client){ double(state: "passed") }
+
+      before{ expect(client_class).to receive(:new).with("rails/rails","token").and_return(travis_client) }
 
       it{ should == "passed" }
     end
 
     context "when travis pro" do
+      let(:client_class){ Capistrano::CI::Clients::TravisPro }
+
       let(:ci_client){ "travis_pro" }
       let(:travis_client){ double(state: "passed") }
 
-     before do
-        Capistrano::CI::Clients::TravisPro.should_receive(:new).with("rails/rails","token").and_return(travis_client)
-      end
+      before{ expect(client_class).to receive(:new).with("rails/rails","token").and_return(travis_client) }
 
       it{ should == "passed" }
     end
@@ -52,26 +61,35 @@ describe Capistrano::CI::Client do
     subject{ client.passed?("master") }
 
     context "when travis" do
+      let(:client_class){ Capistrano::CI::Clients::Travis }
       let(:ci_client){ "travis" }
       let(:travis_client){ double(passed?: true) }
 
-      before do
-        Capistrano::CI::Clients::Travis.should_receive(:new).with("rails/rails").and_return(travis_client)
-      end
+      before{ expect(client_class).to receive(:new).with("rails/rails").and_return(travis_client) }
+
+      it{ should == true }
+    end
+
+    context "when circle" do
+      let(:client_class){ Capistrano::CI::Clients::Circle }
+      let(:ci_client){ "circle" }
+      let(:travis_client){ double(passed?: true) }
+
+      before{ expect(client_class).to receive(:new).with("rails/rails","token").and_return(travis_client) }
 
       it{ should == true }
     end
 
     context "when travis pro" do
+      let(:client_class){ Capistrano::CI::Clients::TravisPro }
       let(:ci_client){ "travis_pro" }
       let(:travis_client){ double(passed?: true) }
 
-      before do
-        Capistrano::CI::Clients::Travis.should_receive(:new).with("rails/rails","token").and_return(travis_client)
-      end
+      before{ expect(client_class).to receive(:new).with("rails/rails","token").and_return(travis_client) }
 
       it{ should == true }
     end
+
     context "when unsupported" do
       let(:ci_client){ "unsupported" }
 
