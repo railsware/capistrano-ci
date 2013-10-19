@@ -4,11 +4,11 @@ module Capistrano
       class Circle < Base
         base_uri "https://circleci.com/api/v1"
 
-        def initialize(repository_name, api_token)
-          self.class.default_params "circle-token" => api_token
+        def initialize(settings = {})
+          self.class.default_params "circle-token" => settings[:ci_access_token]
           self.class.headers 'Accept' => 'application/json'
 
-          @repository_name = repository_name
+          @repository_name = settings[:ci_repository]
         end
 
         def passed?(branch_name)

@@ -4,10 +4,10 @@ module Capistrano
       class TravisPro < Travis
         base_uri 'https://api.travis-ci.com'
 
-        def initialize(repository_name, api_token)
-          @repository_name = repository_name
+        def initialize(settings = {})
+          @repository_name = settings[:ci_repository]
 
-          self.class.headers 'Accept' => 'application/json; version=2', "Authorization" => "token #{api_token}"
+          self.class.headers 'Accept' => 'application/json; version=2', "Authorization" => "token #{settings[:ci_access_token]}"
         end
       end
     end

@@ -6,10 +6,10 @@ module Capistrano
 
         attr_reader :repository_name
 
-        def initialize(repository_name)
+        def initialize(settings = {})
           self.class.headers 'Accept' => 'application/json; version=2'
 
-          @repository_name = repository_name
+          @repository_name = settings[:ci_repository]
         end
 
         def passed?(branch)

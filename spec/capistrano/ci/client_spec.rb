@@ -15,6 +15,24 @@ describe Capistrano::CI::Client do
 
   let(:client){ described_class.new(config) }
 
+  describe ".register" do
+    before{ described_class.register "new_client", Object, [:ci_new_setting] }
+
+    after do
+      described_class.clients.delete("new_client")
+      described_class.settings.delete(:ci_new_setting)
+    end
+
+    it{ expect(described_class.clients["new_client"]).to eq({ client_class: Object, attributes: [:ci_new_setting] }) }
+    it{ expect(described_class.settings).to include(:ci_new_setting) }
+  end
+
+  describe ".clients" do
+    subject{ described_class.clients }
+
+    it{ should have(3).items }
+  end
+
   describe "#state" do
 
     subject{ client.state("master") }
@@ -24,7 +42,7 @@ describe Capistrano::CI::Client do
       let(:ci_client){ "travis" }
       let(:travis_client){ double(state: "passed") }
 
-      before{ expect(client_class).to receive(:new).with("rails/rails").and_return(travis_client) }
+      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails").and_return(travis_client) }
 
       it{ should == "passed" }
     end
@@ -34,7 +52,7 @@ describe Capistrano::CI::Client do
       let(:ci_client){ "circle" }
       let(:travis_client){ double(state: "passed") }
 
-      before{ expect(client_class).to receive(:new).with("rails/rails","token").and_return(travis_client) }
+      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(travis_client) }
 
       it{ should == "passed" }
     end
@@ -45,7 +63,7 @@ describe Capistrano::CI::Client do
       let(:ci_client){ "travis_pro" }
       let(:travis_client){ double(state: "passed") }
 
-      before{ expect(client_class).to receive(:new).with("rails/rails","token").and_return(travis_client) }
+      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(travis_client) }
 
       it{ should == "passed" }
     end
@@ -65,7 +83,7 @@ describe Capistrano::CI::Client do
       let(:ci_client){ "travis" }
       let(:travis_client){ double(passed?: true) }
 
-      before{ expect(client_class).to receive(:new).with("rails/rails").and_return(travis_client) }
+      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails").and_return(travis_client) }
 
       it{ should == true }
     end
@@ -75,7 +93,7 @@ describe Capistrano::CI::Client do
       let(:ci_client){ "circle" }
       let(:travis_client){ double(passed?: true) }
 
-      before{ expect(client_class).to receive(:new).with("rails/rails","token").and_return(travis_client) }
+      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(travis_client) }
 
       it{ should == true }
     end
@@ -85,7 +103,7 @@ describe Capistrano::CI::Client do
       let(:ci_client){ "travis_pro" }
       let(:travis_client){ double(passed?: true) }
 
-      before{ expect(client_class).to receive(:new).with("rails/rails","token").and_return(travis_client) }
+      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(travis_client) }
 
       it{ should == true }
     end

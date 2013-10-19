@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Capistrano::CI::Clients::TravisPro, :vcr do
-  let(:client){ described_class.new("rails/rails-private", "secret_token") }
+  let(:client){ described_class.new(ci_repository: "rails/rails-private", ci_access_token: "secret_token") }
 
   describe "#passed?" do
     subject{ client.passed?(branch_name) }
@@ -36,7 +36,7 @@ describe Capistrano::CI::Clients::TravisPro, :vcr do
     end
 
     context "when repository was not found" do
-      let(:client){ described_class.new("rails/some_strange_repo", "secret_token") }
+      let(:client){ described_class.new(ci_repository: "rails/some_strange_repo", ci_access_token: "secret_token") }
 
       let(:branch_name){ "master" }
 

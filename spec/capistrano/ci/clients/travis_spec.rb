@@ -5,13 +5,13 @@ describe Capistrano::CI::Clients::Travis, :vcr do
     subject{ client.passed?("master") }
 
     context "when passed" do
-      let(:client){ described_class.new("rails/rails") }
+      let(:client){ described_class.new(ci_repository: "rails/rails") }
 
       it{ should == true }
     end
 
     context "when failed" do
-      let(:client){ described_class.new("railsware/zero_deploy") }
+      let(:client){ described_class.new(ci_repository: "railsware/zero_deploy") }
 
       it{ should == false }
     end
@@ -23,19 +23,19 @@ describe Capistrano::CI::Clients::Travis, :vcr do
 
 
     context "when passed" do
-      let(:client){ described_class.new("rails/rails") }
+      let(:client){ described_class.new(ci_repository: "rails/rails") }
 
       it{ should == "passed" }
     end
 
     context "when failed" do
-      let(:client){ described_class.new("railsware/zero_deploy") }
+      let(:client){ described_class.new(ci_repository: "railsware/zero_deploy") }
 
       it{ should == "failed" }
     end
 
     context "when repository was not found" do
-      let(:client){ described_class.new("rails/some_strange_repo") }
+      let(:client){ described_class.new(ci_repository: "rails/some_strange_repo") }
 
       it{ expect{ subject }.to raise_error(Capistrano::CI::Clients::ResponseError) }
     end
