@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/rails/rails?circle-token=api_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 19 Oct 2013 12:41:04 GMT
+      Server:
+      - nginx/1.2.6 (Ubuntu)
+      Set-Cookie:
+      - ring-session=J4LTCJU%2BN%2BxC%2BCrEGrnwo1C6y1JJLHmQAKxBMFlYzSg%3D--41yDCmAMrlKkuRzkBN%2BgS%2BKcgwLdB4TXL4S71zKVGlo%3D;Path=/;HttpOnly;Expires=Sun,
+        19 Oct 2014 08:06:51 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-1be2b67e
+      Content-Length:
+      - '3239'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"dont_build":null,"committer_name":"Alexey Vasiliev","usage_queued_at":"2013-10-19T11:01:01.721Z","branch":"master","body":"","author_date":"1382126717","node":[{"username":"ubuntu","ssh_enabled":null,"port":64719,"public_ip_addr":"54.227.67.104"}],"committer_date":"1382126717","retries":null,"parallel":1,"committer_email":"leopard.not.a@gmail.com","build_time_millis":319617,"why":"retry","author_email":"leopard.not.a@gmail.com","ssh_enabled":null,"start_time":"2013-10-19T11:01:01.821Z","stop_time":"2013-10-19T11:06:21.438Z","lifecycle":"finished","user":{"is_user":true,"login":"paladiy","name":"Olexander
+        Paladiy","email":"OlexanderPaladiy@gmail.com"},"subject":"css","messages":[],"job_name":null,"retry_of":1,"previous_successful_build":null,"outcome":"failed","status":"success","vcs_revision":"c00e43c06f1c84c6005ba26e5e5704dc4064da18","build_num":2,"vcs_url":"https://github.com/rails/rails","timedout":false,"previous":{"build_time_millis":245806,"status":"failed","build_num":1},"all_commit_details":[{"committer_name":"Alexey
+        Vasiliev","branch":"master","body":"","author_date":"1382126717","committer_date":"1382126717","commit_url":"https://github.com/rails/rails/commit/c00e43c06f1c84c6005ba26e5e5704dc4064da18","committer_email":"leopard.not.a@gmail.com","author_email":"leopard.not.a@gmail.com","subject":"css","commit":"c00e43c06f1c84c6005ba26e5e5704dc4064da18","author_name":"Alexey
+        Vasiliev"}],"canceled":false,"infrastructure_fail":false,"failed":true,"build_url":"https://circleci.com/gh/rails/rails/2","author_name":"Alexey
+        Vasiliev","queued_at":"2013-10-19T11:01:01.818Z"},{"dont_build":null,"committer_name":"Alexey
+        Vasiliev","usage_queued_at":"2013-10-19T10:47:49.531Z","branch":"development","body":"","author_date":"1382126717","node":[{"username":"ubuntu","ssh_enabled":null,"port":64712,"public_ip_addr":"54.227.67.104"}],"committer_date":"1382126717","retries":[2],"parallel":1,"committer_email":"leopard.not.a@gmail.com","build_time_millis":245806,"why":"first-build","author_email":"leopard.not.a@gmail.com","ssh_enabled":null,"start_time":"2013-10-19T10:47:49.652Z","stop_time":"2013-10-19T10:51:55.458Z","lifecycle":"finished","user":{"is_user":true,"login":"paladiy","name":"Olexander
+        Paladiy","email":"OlexanderPaladiy@gmail.com"},"subject":"css","messages":[],"job_name":null,"retry_of":null,"previous_successful_build":null,"outcome":"failed","status":"failed","vcs_revision":"c00e43c06f1c84c6005ba26e5e5704dc4064da18","build_num":1,"vcs_url":"https://github.com/rails/rails","timedout":false,"previous":null,"all_commit_details":[{"committer_name":"Alexey
+        Vasiliev","branch":"master","body":"","author_date":"1382126717","committer_date":"1382126717","commit_url":"https://github.com/rails/rails/commit/c00e43c06f1c84c6005ba26e5e5704dc4064da18","committer_email":"leopard.not.a@gmail.com","author_email":"leopard.not.a@gmail.com","subject":"css","commit":"c00e43c06f1c84c6005ba26e5e5704dc4064da18","author_name":"Alexey
+        Vasiliev"}],"canceled":false,"infrastructure_fail":false,"failed":true,"build_url":"https://circleci.com/gh/rails/rails/1","author_name":"Alexey
+        Vasiliev","queued_at":"2013-10-19T10:47:49.632Z"}]'
+    http_version:
+  recorded_at: Sat, 19 Oct 2013 12:41:09 GMT
+recorded_with: VCR 2.6.0

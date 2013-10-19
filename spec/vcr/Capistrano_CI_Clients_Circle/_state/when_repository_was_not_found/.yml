@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://circleci.com/api/v1/project/sendgridlabs/loaderio-web-blabla?circle-token=api_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 19 Oct 2013 12:54:24 GMT
+      Server:
+      - nginx/1.2.6 (Ubuntu)
+      Set-Cookie:
+      - ring-session=8TBGCU2%2BNZIfzY8BPRZTbf4OkmXyTlFnkvFVVPt0nP8%3D--g3Qyiaw2x36oZNnli4Pl6ELrndAAQQfPVqD74P%2FD26A%3D;Path=/;HttpOnly;Expires=Sun,
+        19 Oct 2014 12:42:25 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-d7dd5faf
+      Content-Length:
+      - '46'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Couldn''t find project at GitHub."}'
+    http_version:
+  recorded_at: Sat, 19 Oct 2013 12:54:29 GMT
+recorded_with: VCR 2.6.0
