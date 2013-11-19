@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://semaphoreapp.com/api/v1/projects?auth_token=access_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - '200'
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.13
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"c7c2084f37578e84bc3d7c7b34131cc2"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 117ce3238a63526cd87d2c70f77c9689
+      X-Runtime:
+      - '0.792272'
+      Date:
+      - Tue, 19 Nov 2013 03:30:43 GMT
+      X-Rack-Cache:
+      - miss
+      Server:
+      - nginx/1.2.1 + Phusion Passenger 3.0.13 (mod_rails/mod_rack)
+    body:
+      encoding: UTF-8
+      string: '[{"name":"rails","owner":"rails","branches":[{"branch_name":"master","result": "passed"},{"branch_name":"feature","result":"failed"}]}]'
+    http_version:
+  recorded_at: Tue, 19 Nov 2013 03:30:48 GMT
+recorded_with: VCR 2.6.0
