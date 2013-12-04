@@ -60,6 +60,13 @@ Setup ci_client, ci_repository and ci_access_token in your deployment script:
      set(:ci_repository){ "organisation-or-user/repository-name" }
      set(:ci_access_token){ "your-pro-access-token" }
 
+### Semaphore:
+
+Setup ci_client, ci_repository and ci_access_token in your deployment script:
+
+    set(:ci_client){ "semaphore" }
+    set(:ci_repository){ "organisation-or-user/repository-name" }
+    set(:ci_access_token){ "your-pro-access-token" }
 ### Enable ci:verify task:
 
      before 'deploy' do

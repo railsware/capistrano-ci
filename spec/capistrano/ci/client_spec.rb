@@ -30,7 +30,7 @@ describe Capistrano::CI::Client do
   describe ".clients" do
     subject{ described_class.clients }
 
-    it{ should have(3).items }
+    it{ should have(4).items }
   end
 
   describe "#state" do
@@ -53,6 +53,17 @@ describe Capistrano::CI::Client do
       let(:travis_client){ double(state: "passed") }
 
       before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(travis_client) }
+
+      it{ should == "passed" }
+    end
+
+    context "when semaphore" do
+      let(:client_class){ Capistrano::CI::Clients::Semaphore }
+
+      let(:ci_client){ "semaphore" }
+      let(:semaphore_client){ double(state: "passed") }
+
+      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(semaphore_client) }
 
       it{ should == "passed" }
     end
@@ -94,6 +105,17 @@ describe Capistrano::CI::Client do
       let(:travis_client){ double(passed?: true) }
 
       before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(travis_client) }
+
+      it{ should == true }
+    end
+
+    context "when semaphore" do
+      let(:client_class){ Capistrano::CI::Clients::Semaphore }
+
+      let(:ci_client){ "semaphore" }
+      let(:semaphore_client){ double(passed?: true) }
+
+      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(semaphore_client) }
 
       it{ should == true }
     end
