@@ -50,16 +50,15 @@ describe Capistrano::CI::Client do
     context "when circle" do
       let(:client_class){ Capistrano::CI::Clients::Circle }
       let(:ci_client){ "circle" }
-      let(:travis_client){ double(state: "passed") }
+      let(:circle_client){ double(state: "passed") }
 
-      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(travis_client) }
+      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(circle_client) }
 
       it{ should == "passed" }
     end
 
     context "when semaphore" do
       let(:client_class){ Capistrano::CI::Clients::Semaphore }
-
       let(:ci_client){ "semaphore" }
       let(:semaphore_client){ double(state: "passed") }
 
@@ -70,7 +69,6 @@ describe Capistrano::CI::Client do
 
     context "when travis pro" do
       let(:client_class){ Capistrano::CI::Clients::TravisPro }
-
       let(:ci_client){ "travis_pro" }
       let(:travis_client){ double(state: "passed") }
 
@@ -102,9 +100,9 @@ describe Capistrano::CI::Client do
     context "when circle" do
       let(:client_class){ Capistrano::CI::Clients::Circle }
       let(:ci_client){ "circle" }
-      let(:travis_client){ double(passed?: true) }
+      let(:circle_client){ double(passed?: true) }
 
-      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(travis_client) }
+      before{ expect(client_class).to receive(:new).with(ci_repository: "rails/rails", ci_access_token: "token").and_return(circle_client) }
 
       it{ should == true }
     end
