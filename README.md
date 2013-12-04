@@ -8,6 +8,7 @@ capistrano-ci is extension for capistrano that allows you to check status of you
 
   * Travis CI: Open Source and Pro versions ([https://travis-ci.org](https://travis-ci.org) or [https://travis-ci.com](https://travis-ci.com))
   * CircleCi: [https://circleci.com](https://circleci.com)
+  * Semaphore: [https://semaphoreapp.com](https://semaphoreapp.com)
 
 ## Installation
 
@@ -31,9 +32,9 @@ Add to your Capfile:
 
 Variables list:
 
-  * :ci_client (required) - supports 'travis', 'travis_pro' or 'circle';
-  * :ci_repository (required) - organization or user name and repository name on github;
-  * :ci_access_token(required only for 'travis_pro' ci client) - access token for Pro account on Travis-CI.
+  * :ci_client (required) - supports `travis`, `travis_pro`, `circle`, or `semaphore`
+  * :ci_repository (required) - organization or user name and repository name on github
+  * :ci_access_token(required for `travis_pro`, `circle`, or `semaphore`) - access token specific to the service
 
 ### Open Source Projects
 
@@ -58,7 +59,7 @@ Setup ci_client, ci_repository and ci_access_token in your deployment script:
 
      set(:ci_client){ "circle" }
      set(:ci_repository){ "organisation-or-user/repository-name" }
-     set(:ci_access_token){ "your-pro-access-token" }
+     set(:ci_access_token){ "your-circle-access-token" }
 
 ### Semaphore:
 
@@ -66,7 +67,7 @@ Setup ci_client, ci_repository and ci_access_token in your deployment script:
 
     set(:ci_client){ "semaphore" }
     set(:ci_repository){ "organisation-or-user/repository-name" }
-    set(:ci_access_token){ "your-pro-access-token" }
+    set(:ci_access_token){ "your-semaphore-access-token" }
 
 ### Enable ci:verify task:
 
