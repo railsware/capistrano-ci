@@ -26,7 +26,7 @@ Or install it yourself as:
 
 Add to your Capfile:
 
-    require 'capistrano/ci/recipies'
+    require 'capistrano/ci/recipes'
 
 ## Configuration
 
