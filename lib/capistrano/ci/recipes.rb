@@ -1,19 +1,8 @@
+require 'capistrano/version'
 require 'capistrano/ci'
 
-Capistrano::Configuration.instance(true).load do
-  namespace :ci do
-    desc "verification of branch build status on CI"
-    task :verify do
-      begin
-        client = Capistrano::CI::Client.new self
-
-        unless client.passed?(branch)
-          Capistrano::CLI.ui.say "Your '#{branch}' branch has '#{client.state(branch)}' state on CI."
-          Capistrano::CLI.ui.ask("Continue anyway? (y/N)") == 'y' or abort
-        end
-      rescue => e
-        Capistrano::CLI.ui.say "#{e.class.name}: #{e.message}"
-      end
-    end
-  end
+if defined?(Capistrano::VERSION) && Gem::Version.new(Capistrano::VERSION).release >= Gem::Version.new('3.0.0')
+  load 'capistrano/ci/recipes/v3.rake'
+else
+  load 'capistrano/ci/recipes/v2.rb'
 end

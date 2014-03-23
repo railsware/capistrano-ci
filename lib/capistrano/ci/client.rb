@@ -19,9 +19,9 @@ module Capistrano
       end
 
 
-      def initialize(config)
+      def initialize(context)
         @config = self.class.settings.inject({}) do |result, key|
-          result[key] = config[key] if config.exists?(key)
+          result[key] = context.fetch(key)
           result
         end
       end
