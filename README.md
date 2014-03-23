@@ -1,5 +1,5 @@
 # Capistrano::Ci
-[![Build Status](https://travis-ci.org/railsware/capistrano-ci.png)](https://travis-ci.org/railsware/capistrano-ci)
+[![Build Status](https://travis-ci.org/railsware/capistrano-ci.svg?branch=master)](https://travis-ci.org/railsware/capistrano-ci)
 
 
 ## Introduction
