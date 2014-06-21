@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       Accept:
-      - application/json; version=2
+      - application/vnd.travis-ci.2+json
   response:
     status:
       code: 200
@@ -17,7 +17,7 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Origin:
-      - ! '*'
+      - "*"
       Access-Control-Expose-Headers:
       - Content-Type, Cache-Control, Expires, Etag, Last-Modified
       Age:
@@ -27,11 +27,11 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 19 Oct 2013 08:57:28 GMT
+      - Sat, 21 Jun 2014 13:11:53 GMT
       Etag:
-      - ! '"239eb3427e8c413b25e58cba9ffe5b3d"'
+      - '"9404b52a024d8acd3b0fa887dd10a91b"'
       Server:
-      - nginx/1.5.2
+      - nginx/1.5.7
       Status:
       - 200 OK
       Strict-Transport-Security:
@@ -47,18 +47,18 @@ http_interactions:
       X-Oauth-Scopes:
       - public
       X-Pattern:
-      - /:owner_name/:name
+      - "/:owner_name/:name"
       X-Rack-Cache:
-      - miss, store
+      - stale, valid, store
       Content-Length:
       - '318'
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"repo":{"id":544757,"slug":"railsware/zero_deploy","description":"","last_build_id":5983202,"last_build_number":"2","last_build_state":"failed","last_build_duration":31,"last_build_language":null,"last_build_started_at":"2013-04-02T11:13:13Z","last_build_finished_at":"2013-04-02T11:13:30Z","github_language":"Ruby"}}'
+      encoding: UTF-8
+      string: '{"repo":{"id":544757,"slug":"railsware/zero_deploy","description":"","last_build_id":5983202,"last_build_number":"2","last_build_state":"failed","last_build_duration":31,"last_build_language":null,"last_build_started_at":"2013-04-02T11:13:13Z","last_build_finished_at":"2013-04-02T11:13:30Z","github_language":"Ruby"}}'
     http_version: 
-  recorded_at: Sat, 19 Oct 2013 08:57:33 GMT
+  recorded_at: Sat, 21 Jun 2014 13:11:53 GMT
 - request:
     method: get
     uri: https://api.travis-ci.org/repos/544757/branches/master
@@ -67,7 +67,7 @@ http_interactions:
       string: ''
     headers:
       Accept:
-      - application/json; version=2
+      - application/vnd.travis-ci.2+json
   response:
     status:
       code: 200
@@ -76,7 +76,7 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Origin:
-      - ! '*'
+      - "*"
       Access-Control-Expose-Headers:
       - Content-Type, Cache-Control, Expires, Etag, Last-Modified
       Age:
@@ -86,11 +86,11 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 19 Oct 2013 08:57:29 GMT
+      - Sat, 21 Jun 2014 13:11:54 GMT
       Etag:
-      - ! '"8112a97fe15ce9bfbe1191c9368b5ae1"'
+      - '"3df414de985c21517500253bb7f0c9ca"'
       Server:
-      - nginx/1.5.2
+      - nginx/1.5.7
       Status:
       - 200 OK
       Strict-Transport-Security:
@@ -106,7 +106,7 @@ http_interactions:
       X-Oauth-Scopes:
       - public
       X-Pattern:
-      - /:repository_id/branches/:branch
+      - "/:repository_id/branches/:branch"
       X-Rack-Cache:
       - miss, store
       Content-Length:
@@ -114,9 +114,9 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"branch":{"id":5983202,"repository_id":544757,"commit_id":1766529,"number":"2","config":{"language":"ruby","rvm":["1.9.3","2.0.0"],".result":"configured"},"state":"failed","started_at":"2013-04-02T11:13:13Z","finished_at":"2013-04-02T11:13:30Z","duration":31,"job_ids":[5983203,5983204],"pull_request":false},"commit":{"id":1766529,"sha":"ef87117a529b2e20a34d9ddbdee82c6baf906abd","branch":"master","message":"CI
+      encoding: UTF-8
+      string: '{"branch":{"id":5983202,"repository_id":544757,"commit_id":1766529,"number":"2","config":{"language":"ruby","rvm":["1.9.3","2.0.0"],".result":"configured"},"state":"failed","started_at":"2013-04-02T11:13:13Z","finished_at":"2013-04-02T11:13:30Z","duration":31,"job_ids":[5983203,5983204],"pull_request":false},"commit":{"id":1766529,"sha":"ef87117a529b2e20a34d9ddbdee82c6baf906abd","branch":"master","message":"CI
         status added","committed_at":"2013-04-02T11:10:49Z","author_name":"gregolsen","author_email":"anotheroneman@yahoo.com","committer_name":"gregolsen","committer_email":"anotheroneman@yahoo.com","compare_url":"https://github.com/railsware/zero_deploy/compare/0a2aaa3d7050...ef87117a529b"}}'
     http_version: 
-  recorded_at: Sat, 19 Oct 2013 08:57:33 GMT
-recorded_with: VCR 2.6.0
+  recorded_at: Sat, 21 Jun 2014 13:11:54 GMT
+recorded_with: VCR 2.9.2

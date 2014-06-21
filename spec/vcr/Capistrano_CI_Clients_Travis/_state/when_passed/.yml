@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       Accept:
-      - application/json; version=2
+      - application/vnd.travis-ci.2+json
   response:
     status:
       code: 200
@@ -17,7 +17,7 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Origin:
-      - ! '*'
+      - "*"
       Access-Control-Expose-Headers:
       - Content-Type, Cache-Control, Expires, Etag, Last-Modified
       Age:
@@ -27,11 +27,11 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 19 Oct 2013 08:57:29 GMT
+      - Sat, 21 Jun 2014 13:11:51 GMT
       Etag:
-      - ! '"7e14dca3cc77b42dd6088a8fa2ae950b"'
+      - '"3a990d581565244c976c26d77fbbbda9"'
       Server:
-      - nginx/1.5.2
+      - nginx/1.5.7
       Status:
       - 200 OK
       Strict-Transport-Security:
@@ -41,24 +41,24 @@ http_interactions:
       X-Accepted-Oauth-Scopes:
       - public
       X-Content-Digest:
-      - 3c97c9e10513f412d2e9d4380ae1f67e9b0c2aac
+      - 262b36bf960c1d0314c49e8b0c8f1018dfbab708
       X-Endpoint:
       - Travis::Api::App::Endpoint::Repos
       X-Oauth-Scopes:
       - public
       X-Pattern:
-      - /:owner_name/:name
+      - "/:owner_name/:name"
       X-Rack-Cache:
-      - stale, valid, store
+      - miss, store
       Content-Length:
-      - '308'
+      - '326'
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"repo":{"id":891,"slug":"rails/rails","description":"Ruby on Rails","last_build_id":12751152,"last_build_number":"11026","last_build_state":"started","last_build_duration":null,"last_build_language":null,"last_build_started_at":"2013-10-19T08:50:23Z","last_build_finished_at":null,"github_language":"Ruby"}}'
-    http_version:
-  recorded_at: Sat, 19 Oct 2013 08:57:34 GMT
+      encoding: UTF-8
+      string: '{"repo":{"id":891,"slug":"rails/rails","description":"Ruby on Rails","last_build_id":28102736,"last_build_number":"17783","last_build_state":"passed","last_build_duration":26269,"last_build_language":null,"last_build_started_at":"2014-06-21T10:28:05Z","last_build_finished_at":"2014-06-21T10:55:50Z","github_language":"Ruby"}}'
+    http_version: 
+  recorded_at: Sat, 21 Jun 2014 13:11:51 GMT
 - request:
     method: get
     uri: https://api.travis-ci.org/repos/891/branches/master
@@ -67,7 +67,7 @@ http_interactions:
       string: ''
     headers:
       Accept:
-      - application/json; version=2
+      - application/vnd.travis-ci.2+json
   response:
     status:
       code: 200
@@ -76,7 +76,7 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Origin:
-      - ! '*'
+      - "*"
       Access-Control-Expose-Headers:
       - Content-Type, Cache-Control, Expires, Etag, Last-Modified
       Age:
@@ -86,11 +86,11 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 19 Oct 2013 08:57:30 GMT
+      - Sat, 21 Jun 2014 13:11:52 GMT
       Etag:
-      - ! '"7160009bce524a384403a2c66bec49b4"'
+      - '"4e32726abdbef67e21fb0419810fc26e"'
       Server:
-      - nginx/1.5.2
+      - nginx/1.5.7
       Status:
       - 200 OK
       Strict-Transport-Security:
@@ -100,27 +100,28 @@ http_interactions:
       X-Accepted-Oauth-Scopes:
       - public
       X-Content-Digest:
-      - ff1abe891a5a8148bfdfe458b057ecf04d364bd9
+      - e50dfe76c3f088d404b2d17ea679a0c0109e640a
       X-Endpoint:
       - Travis::Api::App::Endpoint::Repos
       X-Oauth-Scopes:
       - public
       X-Pattern:
-      - /:repository_id/branches/:branch
+      - "/:repository_id/branches/:branch"
       X-Rack-Cache:
-      - stale, valid, store
+      - miss, store
       Content-Length:
-      - '1731'
+      - '1998'
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"branch":{"id":12719548,"repository_id":891,"commit_id":3729815,"number":"11020","config":{"script":"ci/travis.rb","before_install":["travis_retry
-        gem install bundler"],"rvm":["1.9.3","2.0.0","jruby-head","rbx-19mode"],"env":["GEM=railties","GEM=ap,am,amo,as,av","GEM=ar:mysql","GEM=ar:mysql2","GEM=ar:sqlite3","GEM=ar:postgresql"],"matrix":{"allow_failures":[{"rvm":"jruby-head"},{"rvm":"rbx-19mode"}]},"notifications":{"email":false,"irc":{"on_success":"change","on_failure":"always","channels":["irc.freenode.org#rails-contrib"]},"campfire":{"on_success":"change","on_failure":"always","rooms":[{"secure":"YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="}]}},"bundler_args":"--path
-        vendor/bundle --without test",".result":"configured"},"state":"passed","started_at":"2013-10-18T16:30:29Z","finished_at":"2013-10-18T16:51:44Z","duration":31114,"job_ids":[12719549,12719550,12719551,12719552,12719553,12719554,12719555,12719556,12719557,12719558,12719559,12719560,12719561,12719562,12719563,12719564,12719565,12719566,12719567,12719568,12719569,12719570,12719571,12719572],"pull_request":false},"commit":{"id":3729815,"sha":"7ec3f354958ef1709f1543b16fea5131b516f3cf","branch":"master","message":"Merge
-        pull request #11839 from chocoby/fix/convert_port_number\n\nConvert Fixnum
-        into String the port number like `db:structure:dump` task in MySQL.","committed_at":"2013-10-18T14:15:31Z","author_name":"Yves
-        Senn","author_email":"yves.senn@gmail.com","committer_name":"Yves Senn","committer_email":"yves.senn@gmail.com","compare_url":"https://github.com/rails/rails/compare/6c2810b8ed69...7ec3f354958e"}}'
-    http_version:
-  recorded_at: Sat, 19 Oct 2013 08:57:35 GMT
-recorded_with: VCR 2.6.0
+      encoding: UTF-8
+      string: '{"branch":{"id":28048479,"repository_id":891,"commit_id":8094485,"number":"17770","config":{"script":"ci/travis.rb","before_install":["travis_retry
+        gem install bundler","rvm current | grep ''jruby'' && export AR_JDBC=true
+        || echo"],"rvm":["1.9.3","2.0.0",2.1,"ruby-head","rbx-2","jruby"],"env":["GEM=railties","GEM=ap,am,amo,as,av","GEM=ar:mysql","GEM=ar:mysql2","GEM=ar:sqlite3","GEM=ar:postgresql"],"matrix":{"allow_failures":[{"rvm":"1.9.3","env":"GEM=ar:mysql"},{"rvm":"rbx-2"},{"rvm":"jruby"},{"rvm":"ruby-head"}],"fast_finish":true},"notifications":{"email":false,"irc":{"on_success":"change","on_failure":"always","channels":["irc.freenode.org#rails-contrib"]},"campfire":{"on_success":"change","on_failure":"always","rooms":[{"secure":"YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="}]}},"bundler_args":"--path
+        vendor/bundle --without test","services":["memcached"],".result":"configured","language":"ruby","os":"linux"},"state":"passed","started_at":"2014-06-20T14:41:12Z","finished_at":"2014-06-20T15:18:30Z","duration":33550,"job_ids":[28048480,28048481,28048482,28048483,28048484,28048485,28048486,28048487,28048488,28048489,28048490,28048491,28048492,28048493,28048494,28048495,28048496,28048497,28048498,28048499,28048500,28048501,28048502,28048503,28048504,28048505,28048506,28048507,28048508,28048509,28048510,28048511,28048512,28048513,28048514,28048515],"pull_request":false},"commit":{"id":8094485,"sha":"081eec4ba68d161623791d4f6c885ce0d442f31c","branch":"master","message":"Merge
+        pull request #15764 from arthurnn/dependencies_name_error\n\nMake dependencies.rb
+        add a name to NameError","committed_at":"2014-06-20T14:39:45Z","author_name":"Matthew
+        Draper","author_email":"matthew@trebex.net","committer_name":"Matthew Draper","committer_email":"matthew@trebex.net","compare_url":"https://github.com/rails/rails/compare/c2d5b31073d9...081eec4ba68d"}}'
+    http_version: 
+  recorded_at: Sat, 21 Jun 2014 13:11:52 GMT
+recorded_with: VCR 2.9.2

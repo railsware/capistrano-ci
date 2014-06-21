@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1/project/sendgridlabs/loaderio-web-blabla?circle-token=api_token
+    uri: https://circleci.com/api/v1/project/rails-private-blabla?circle-token=api_token
     body:
       encoding: US-ASCII
       string: ''

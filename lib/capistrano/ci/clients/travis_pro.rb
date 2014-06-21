@@ -7,7 +7,7 @@ module Capistrano
         def initialize(settings = {})
           @repository_name = settings[:ci_repository]
 
-          self.class.headers 'Accept' => 'application/json; version=2', "Authorization" => "token #{settings[:ci_access_token]}"
+          self.class.headers 'Accept' => 'application/vnd.travis-ci.2+json', "Authorization" => "token #{settings[:ci_access_token]}"
         end
       end
     end

@@ -41,7 +41,7 @@ describe Capistrano::CI::Clients::Circle, :vcr do
     end
 
     context "when repository was not found" do
-      let(:client){ described_class.new ci_repository: "sendgridlabs/loaderio-web-blabla", ci_access_token: "api_token" }
+      let(:client){ described_class.new ci_repository: "rails-private-blabla", ci_access_token: "api_token" }
 
       it{ expect{ subject }.to raise_error(Capistrano::CI::Clients::ResponseError) }
     end

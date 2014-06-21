@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.travis-ci.com/repos/rails/rails-private
+    uri: https://api.travis-ci.com/repos/rails-private
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - application/json; version=2
+      - application/vnd.travis-ci.2+json
       Authorization:
       - token secret_token
   response:
@@ -19,7 +19,7 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Origin:
-      - ! '*'
+      - "*"
       Access-Control-Expose-Headers:
       - Content-Type, Cache-Control, Expires, Etag, Last-Modified
       Cache-Control:
@@ -27,11 +27,11 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 19 Oct 2013 09:13:48 GMT
+      - Sat, 21 Jun 2014 13:11:44 GMT
       Etag:
-      - ! '"7c2fa1741ca4c87a5bc1846fada825af"'
+      - '"fcc3b707b6977cf3f5d932d09f682d73"'
       Server:
-      - nginx/1.5.2
+      - nginx/1.5.7
       Status:
       - 200 OK
       Strict-Transport-Security:
@@ -45,16 +45,17 @@ http_interactions:
       X-Oauth-Scopes:
       - public,private
       X-Pattern:
-      - /:owner_name/:name
+      - "/:owner_name/:name"
       Content-Length:
-      - '308'
+      - '360'
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"repo":{"id":95390,"slug":"rails/rails-private","description":"","last_build_id":1443071,"last_build_number":"641","last_build_state":"started","last_build_duration":null,"last_build_language":null,"last_build_started_at":"2013-10-19T09:13:35Z","last_build_finished_at":null,"github_language":"Ruby"}}'
+      encoding: UTF-8
+      string: '{"repo":{"id":95390,"slug":"rails-private","description":"Main
+        application for ","last_build_id":4494111,"last_build_number":"2376","last_build_state":"failed","last_build_duration":1140,"last_build_language":null,"last_build_started_at":"2014-06-20T21:11:40Z","last_build_finished_at":"2014-06-20T21:22:03Z","github_language":"Ruby"}}'
     http_version:
-  recorded_at: Sat, 19 Oct 2013 09:13:53 GMT
+  recorded_at: Sat, 21 Jun 2014 13:11:45 GMT
 - request:
     method: get
     uri: https://api.travis-ci.com/repos/95390/branches/events-framework
@@ -63,7 +64,7 @@ http_interactions:
       string: ''
     headers:
       Accept:
-      - application/json; version=2
+      - application/vnd.travis-ci.2+json
       Authorization:
       - token secret_token
   response:
@@ -74,7 +75,7 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Origin:
-      - ! '*'
+      - "*"
       Access-Control-Expose-Headers:
       - Content-Type, Cache-Control, Expires, Etag, Last-Modified
       Cache-Control:
@@ -82,11 +83,11 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 19 Oct 2013 09:13:49 GMT
+      - Sat, 21 Jun 2014 13:11:45 GMT
       Etag:
-      - ! '"7c2fa1741ca4c87a5bc1846fada825af"'
+      - '"3cc2ca69f6229073788ba69615e9e54d"'
       Server:
-      - nginx/1.5.2
+      - nginx/1.5.7
       Status:
       - 200 OK
       Strict-Transport-Security:
@@ -100,15 +101,14 @@ http_interactions:
       X-Oauth-Scopes:
       - public,private
       X-Pattern:
-      - /:repository_id/branches/:branch
+      - "/:repository_id/branches/:branch"
       Content-Length:
-      - '1666'
+      - '1682'
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"branch":{"id":1443071,"repository_id":95390,"commit_id":1684724,"number":"641","state":"started","started_at":"2013-10-19T09:13:35Z","finished_at":null,"duration":null,"job_ids":[1974515],"pull_request":false},"commit":{"id":1684724,"sha":"9ba68cf72ce47ee377abfe8de9a2df58c183e284","branch":"events-framework","message":"[#59112124]
-        publish monitoring event when finish test","committed_at":"2013-10-18T14:42:04Z","author_name":"paladiy","author_email":"olexanderpaladiy@gmail.com","committer_name":"paladiy","committer_email":"olexanderpaladiy@gmail.com","compare_url":"https://github.com/rails/rails-private/compare/e022614de429...9ba68cf72ce4"}}'
+      encoding: UTF-8
+      string: '{"branch":{"id":1452741,"repository_id":95390,"commit_id":1696175,"number":"656","state":"started","started_at":"2013-10-21T09:20:12Z","finished_at":"2013-10-21T09:30:59Z","duration":647,"job_ids":[1987986],"pull_request":false},"commit":{"id":1696175,"sha":"8f87e82634cc151d1f60d24ee6513146b1b4ce44","branch":"events-framework","compare_url":"https://github.com/rails-private/compare/fb18de186082...8f87e82634cc"}}'
     http_version:
-  recorded_at: Sat, 19 Oct 2013 09:13:54 GMT
-recorded_with: VCR 2.6.0
+  recorded_at: Sat, 21 Jun 2014 13:11:45 GMT
+recorded_with: VCR 2.9.2

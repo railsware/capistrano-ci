@@ -7,7 +7,7 @@ module Capistrano
         attr_reader :repository_name
 
         def initialize(settings = {})
-          self.class.headers 'Accept' => 'application/json; version=2'
+          self.class.headers 'Accept' => 'application/vnd.travis-ci.2+json'
 
           @repository_name = settings[:ci_repository]
         end

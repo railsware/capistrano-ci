@@ -8,20 +8,26 @@ http_interactions:
       string: ''
     headers:
       Accept:
-      - application/json; version=2
+      - application/vnd.travis-ci.2+json
   response:
     status:
       code: 404
       message: Not Found
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Cache-Control, Expires, Etag, Last-Modified
       Cache-Control:
       - no-cache
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 19 Oct 2013 08:57:44 GMT
+      - Sat, 21 Jun 2014 13:11:52 GMT
       Server:
-      - nginx/1.5.2
+      - nginx/1.5.7
       Status:
       - 404 Not Found
       Strict-Transport-Security:
@@ -35,7 +41,7 @@ http_interactions:
       X-Oauth-Scopes:
       - public
       X-Pattern:
-      - /:owner_name/:name
+      - "/:owner_name/:name"
       X-Rack-Cache:
       - miss
       Content-Length:
@@ -43,8 +49,8 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"file":"not found"}'
+      encoding: UTF-8
+      string: '{"file":"not found"}'
     http_version: 
-  recorded_at: Sat, 19 Oct 2013 08:57:49 GMT
-recorded_with: VCR 2.6.0
+  recorded_at: Sat, 21 Jun 2014 13:11:53 GMT
+recorded_with: VCR 2.9.2
